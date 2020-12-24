@@ -185,7 +185,7 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
               setGameState(!gameScoreChecker ? 'pick' : '');
             }}
           >
-            Play Again
+            {!gameScoreChecker ? 'Try Again' : 'Claim your Prize!'}
           </button>
         </div>
         {housePickElement ? (
@@ -213,7 +213,7 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
               setGameState(!gameScoreChecker ? 'pick' : '');
             }}
           >
-            Play Again
+            {!gameScoreChecker ? 'Try Again' : 'Claim your Prize!'}
           </div>
         </div>
       </div>
