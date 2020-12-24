@@ -3,15 +3,31 @@ import Header from './Header';
 
 import '../css/App.scss';
 import { StoreProvider } from './ScoreContext';
-import Footer from './Footer';
+import Santa from './Santa';
 
 const Layout: React.FC<any> = ({ children }) => {
   return (
     <StoreProvider>
       <div className='wrapper'>
         <Header />
+        <ul className='lightrope'>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <Santa />
         {children}
-        {/* <Footer /> */}
       </div>
     </StoreProvider>
   );

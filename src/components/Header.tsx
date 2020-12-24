@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Santa from './Santa';
 import ScoreBoard from './ScoreBoard';
 import { StoreContext } from './ScoreContext';
 

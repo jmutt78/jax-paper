@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import Layout from '../components/layout';
 import Play from '../components/Play';
-import { StoreContext } from '../components/ScoreContext';
+
 import Start from '../components/Start';
+import Winner from '../components/Winner';
 
 const IndexPage = () => {
   const [gameState, setGameState] = useState('pick');
@@ -23,7 +24,7 @@ const IndexPage = () => {
       </>
     );
   } else {
-    body = <>yo</>;
+    body = <Winner />;
   }
 
   return (

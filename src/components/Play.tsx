@@ -27,8 +27,8 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
   } = useContext(StoreContext);
 
   const [countDown, setCountDown] = useState('3');
-  const [playerPickElement, setPlayerElement] = useState('' || null);
-  const [housePickElement, setHouseElement] = useState('');
+  const [playerPickElement, setPlayerElement] = useState<any>();
+  const [housePickElement, setHouseElement] = useState<any>();
   const [resultMessage, setResultMessage] = useState('');
   const [playerWins, setPlayerWins] = useState(false);
   const [houseWins, setHouseWins] = useState(false);
@@ -124,7 +124,7 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
               style={{ backgroundImage: `url(${setMyPickIcon(housePick)}` }}
             ></div>
             <div className='result__mobile pick__title'>
-              The House Picked {housePick}
+              Santa Picked {housePick}
             </div>
           </div>,
         );
@@ -147,14 +147,10 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
           </div>,
         );
         showWinner();
-      })
-      .then(() => {
-        // if (gameScore === 1) {
-        //   console.log('gamesset');
-        //   setGameState('');
-        // }
       });
   }, [setHouseElement, setCountDown, houseWins, playerWins]);
+
+  const gameScoreChecker = gameScore === 3;
 
   return (
     <>
@@ -186,7 +182,7 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
             className='play-again__button '
             onClick={() => {
               newHousePick();
-              setGameState('pick');
+              setGameState(!gameScoreChecker ? 'pick' : '');
             }}
           >
             Play Again
@@ -214,7 +210,7 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
             className='play-again__button'
             onClick={() => {
               newHousePick();
-              setGameState('pick');
+              setGameState(!gameScoreChecker ? 'pick' : '');
             }}
           >
             Play Again
