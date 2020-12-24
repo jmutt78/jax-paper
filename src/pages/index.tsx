@@ -6,7 +6,7 @@ import Start from '../components/Start';
 import Winner from '../components/Winner';
 
 const IndexPage = () => {
-  const [gameState, setGameState] = useState('pick');
+  const [gameState, setGameState] = useState('start');
   console.log(gameState);
 
   let body = null;
@@ -22,6 +22,15 @@ const IndexPage = () => {
       <>
         <Play setGameState={setGameState} />
       </>
+    );
+  } else if (gameState === 'start') {
+    body = (
+      <div className='start-screen'>
+        <h1>HO! HO! HO!</h1>
+        <h1>Merry Christmas Jax!</h1>
+        <h2>Beat me 3 times and recieve a prize.</h2>
+        <button onClick={() => setGameState('pick')}>Start</button>
+      </div>
     );
   } else {
     body = <Winner />;
