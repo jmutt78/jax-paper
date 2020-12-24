@@ -1,16 +1,21 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-export const StoreContext = createContext({
-  myPick: '',
-  newHousePick: () => {},
-  housePick: '',
-  gameScore: 0,
-  setGameScore: (active: number) => {},
-  setMyPick: (active: string) => {},
-});
+export interface PostsContextData {
+  myPick: string;
+  gameScore: number;
+  housePick: string;
+}
 
-export const StoreProvider: React.FC<any> = ({ children }) => {
-  const [myPick, setMyPick] = useState('');
+export const postsContextDefaultValue: PostsContextData = {
+  myPick: '',
+  gameScore: 0,
+  housePick: '',
+};
+
+export const StoreContext = React.createContext<any>(null);
+
+export const StoreProvider: React.FC<PostsContextData> = ({ children }) => {
+  const [myPick, setMyPick] = React.useState<any>('');
   const [housePick, setHousePick] = useState('');
   const [gameScore, setGameScore] = useState(0);
 
@@ -22,17 +27,17 @@ export const StoreProvider: React.FC<any> = ({ children }) => {
 
   useEffect(() => {
     newHousePick();
-  }, [setMyPick]);
+  }, []);
 
   return (
     <StoreContext.Provider
       value={{
         myPick,
+        setMyPick,
+        setGameScore,
         newHousePick,
         housePick,
         gameScore,
-        setGameScore,
-        setMyPick,
       }}
     >
       {children}

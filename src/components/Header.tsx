@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <header>
       <h1 className='header__title'>
+        <span>Christmas</span>
         <span>Rock</span>
         <span>Paper</span>
         <span>Scissors</span>
