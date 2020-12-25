@@ -16,7 +16,7 @@ const Winner: React.FC<any> = () => {
       {prize && (
         <div className='prize-message'>
           <h3>Handbags Galore!</h3>
-          <p>You won one year subscription to Vivrelle!</p>
+          <p>You won a year subscription to Vivrelle!</p>
           <div>
             <img src={handbag} alt='handbag photo' />
             <p>

@@ -28,7 +28,7 @@ const IndexPage = () => {
       <div className='start-screen'>
         <h1>HO! HO! HO!</h1>
         <h1>Merry Christmas Jax!</h1>
-        <h2>Beat me 3 times and recieve a prize.</h2>
+        <h2>Beat me 5 times and recieve a prize.</h2>
         <button onClick={() => setGameState('pick')}>Start</button>
       </div>
     );

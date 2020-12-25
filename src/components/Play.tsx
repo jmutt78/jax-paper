@@ -64,7 +64,6 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
       setGameScore(currentScore + 1);
       setResultMessage('You Win');
     } else if (houseWins) {
-      setGameScore(currentScore - 1);
       setResultMessage('You Lose');
     } else {
       setResultMessage('Draw');
@@ -150,7 +149,7 @@ const Play: React.FC<PlayProps> = ({ setGameState }) => {
       });
   }, [setHouseElement, setCountDown, houseWins, playerWins]);
 
-  const gameScoreChecker = gameScore === 3;
+  const gameScoreChecker = gameScore === 5;
 
   return (
     <>
